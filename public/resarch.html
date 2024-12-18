@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Research on Coding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .research-list {
+            list-style: none;
+            padding: 0;
+        }
+        .research-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fefefe;
+        }
+        .research-item h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        .research-item p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .research-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .research-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Famous Research on Coding</h1>
+        <p>A collection of influential studies in coding and software engineering</p>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search research by title, author, or year">
+        </div>
+        <ul class="research-list" id="research-list">
+            <!-- Research items will be populated here -->
+        </ul>
+    </div>
+    <script>
+        const researchPapers = [
+            {
+                title: "The Mythical Man-Month",
+                author: "Fred Brooks",
+                year: 1975,
+                summary: "Explores the challenges of software engineering, including team management and scheduling.",
+                link: "https://en.wikipedia.org/wiki/The_Mythical_Man-Month"
+            },
+            {
+                title: "Reflections on Trusting Trust",
+                author: "Ken Thompson",
+                year: 1984,
+                summary: "Discusses compiler trust and the implications of hidden malicious code.",
+                link: "https://dl.acm.org/doi/10.1145/358198.358210"
+            },
+            {
+                title: "Design Patterns: Elements of Reusable Object-Oriented Software",
+                author: "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+                year: 1994,
+                summary: "Introduced foundational design patterns used in software development.",
+                link: "https://en.wikipedia.org/wiki/Design_Patterns"
+            }
+        ];
+
+        const researchList = document.getElementById('research-list');
+        const searchInput = document.getElementById('search');
+
+        function displayResearch(papers) {
+            researchList.innerHTML = papers.map(paper => `
+                <li class="research-item">
+                    <h3>${paper.title}</h3>
+                    <p><strong>Author(s):</strong> ${paper.author}</p>
+                    <p><strong>Year:</strong> ${paper.year}</p>
+                    <p>${paper.summary}</p>
+                    <a href="${paper.link}" target="_blank">Read More</a>
+                </li>
+            `).join('');
+        }
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            const filteredPapers = researchPapers.filter(paper =>
+                paper.title.toLowerCase().includes(query) ||
+                paper.author.toLowerCase().includes(query) ||
+                paper.year.toString().includes(query)
+            );
+            displayResearch(filteredPapers);
+        });
+
+        // Initial display
+        displayResearch(researchPapers);
+    </script>
+</body>
+</html>

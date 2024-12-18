@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Wonder</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <div class="img">
+            <img src="./img/cccc.png" alt="img">
+        </div>
+        <div class="logo">
+            <h1>Web Wonder</h1>
+        </div>
+
+
+        <a class="logout-btn" href="./logout.html">Log out</a>
+
+
+
+       <a  class="MyAccount"  href="./profile.html" target="_blank">My Account</a>
+
+    </header>
+    <hr>
+    <div class="container">
+
+
+        <ul class="nav-links">
+            <label class="mega-nav-label mega-nav-label-1" for="mega-nav-label-1">
+                <li><a href="products.html" target="_blank">Products</a></li>
+                <!-- <span class="icon-arrow-head-down"></span> -->
+            </label>
+            <label class="mega-nav-label mega-nav-label-2" for="mega-nav-label-2">
+                <li><a href="Solutions.htm" target="_blank">Solutions</a></li>
+                <!-- <span class="icon-arrow-head-down"></span> -->
+            </label>
+            <label class="mega-nav-label mega-nav-label-6" for="mega-nav-label-6">
+                <li><a href="resarch.html" target="_blank">Research</a></li>
+                <!-- <span class="icon-arrow-head-down"></span> -->
+            </label>
+            <label class="mega-nav-label mega-nav-label-6" for="mega-nav-label-6">
+                <li><a href="Acdmey.html" target="_blank">Acadmey</a></li>
+                <!-- <span class="icon-arrow-head-down"></span> -->
+            </label>
+            <label class="mega-nav-label mega-nav-label-6" for="mega-nav-label-6">
+                <li><a href="Support.html" target="_blank">Support</a></li>
+                <!-- <span class="icon-arrow-head-down">download</span> -->
+
+
+            </label>
+
+
+
+
+        </ul>
+
+        </nav>
+        <main>
+            <div class="content">
+
+                <div class="main-container">
+                    <h1 class="main-heading">
+                        Trusted by </h1>
+                    <span class="highlight">Security</span>
+                    <span class="nd">Professionals.</span>
+
+
+                    <p class="intro" class="padding-bottom-medium 493 98">Best-in-class software and learning for <br>
+                        security engineers and penetration testers.</p>
+
+                    <a class="FINDOUTMORE-btn" a href="findoutMore.html" target="_blank">FIND OUT MORE</a></button>
+
+
+
+                </div>
+
+
+            </div>
+    </div>
+    </main>
+    </div>
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const sidebar = document.querySelector('.sidebar');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = sidebar.style.transform === 'translateX(0px)';
+            sidebar.style.transform = isOpen ? 'translateX(-250px)' : 'translateX(0px)';
+        });
+
+    </script>
+</body>
+
+</html>
